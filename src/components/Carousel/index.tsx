@@ -27,9 +27,18 @@ export default function Carousel(props: CarouselProps) {
   const refCarousel = useRef<any>()
 
   useEffect(() => {
-    const rect = refCarousel.current.getBoundingClientRect()
-    setCurrent(0)
-    setWidth(rect.width)
+    const onResize = () => {
+      const rect = refCarousel.current.getBoundingClientRect()
+      setCurrent(0)
+      setWidth(rect.width)
+    }
+    window.addEventListener('resize', onResize)
+
+    onResize()
+
+    return () => {
+      window.removeEventListener('resize', onResize)
+    }
   }, [data, duration])
 
 
@@ -40,7 +49,7 @@ export default function Carousel(props: CarouselProps) {
       transition: `transform .5s`,
       transform: `translateX(-${current * width}px)`,
     })
-  }, [current])
+  }, [current, width])
 
   const onChangeWithIndex = (index) => {
     if (!isLocked && index !== current) {

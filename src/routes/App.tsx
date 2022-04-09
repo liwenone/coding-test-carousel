@@ -1,4 +1,7 @@
 import Carousel from '../components/Carousel';
+import img1 from '../assets/1.jpeg';
+import img2 from '../assets/2.jpeg';
+import img3 from '../assets/3.jpeg';
 import './App.scss';
 
 
@@ -7,17 +10,17 @@ export default function App() {
     {
       title: 'Oh. So. Pro.',
       desc: 'From $41.62/mo. for 24 mo. or $999 before trade‑in1',
-      imgUrl: 'https://www.apple.com/v/iphone/home/bf/images/overview/compare/compare_iphone_12__dz3sv9lzdzu6_medium_2x.jpg'
+      imgUrl: img1
     },
     {
       title: 'Mac Studio',
       desc: 'Empower station.',
-      imgUrl: 'https://www.apple.com/v/mac/home/bm/images/overview/hero/mac_studio__c2wojtx43pw2_medium_2x.jpg'
+      imgUrl: img2
     },
     {
       title: 'Studio Display',
       desc: 'A sight to be bold.',
-      imgUrl: 'https://www.apple.com/v/mac/home/bm/images/overview/hero/studio_display__cn9qj5umkwya_medium_2x.jpg'
+      imgUrl: img3
     },
   ]
 
